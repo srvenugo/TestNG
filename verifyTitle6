@@ -1,0 +1,44 @@
+/*
+ * CLASS LEVEL - BeforeClass and AfterClass Notations 
+ * Required Flow: login, xyz, abcd & logout (using priority)
+ * This shows only two test cases xyz & abcd - excluding BeforeTest & AfterTest
+ */
+package TestNG;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class verifyTitle6 
+{
+	@AfterClass
+	  public void logout() 
+	  {
+		  Assert.assertEquals("Gmail", "Gmail");
+		  System.out.println("Logout successful");
+	  }
+	  
+	  @Test(priority=2)
+	  public void abcd() 
+	  {
+		  Assert.assertEquals("abcd", "abcd");
+		  System.out.println("Actual meets expected result and hence test passed");
+	  }
+	  
+	  @Test(priority=1)
+	  public void xyz() 
+	  {
+		  Assert.assertEquals("Yahoo", "Yahoo");
+		  System.out.println("Actual meets expected result and hence test passed");
+	  }
+	  
+	  @BeforeClass
+	  public void login() 
+	  {
+		  Assert.assertEquals("Google", "Google");
+		  System.out.println("Successfully logged into google");
+	  }
+}
