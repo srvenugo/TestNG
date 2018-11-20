@@ -1,0 +1,44 @@
+/*
+ * Normal Flow: 
+ * Required Flow: login, abcd & logout  AND login, xyx & logout (in 2 sets)
+ * Using BeforeTest & AfterTest annotations
+ * This shows only two test cases abcd & xyz - excluding BeforeTest & AfterTest
+ */
+package TestNG;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class verifyTitle5 
+{
+	@AfterMethod
+	  public void logout() 
+	  {
+		  Assert.assertEquals("Gmail", "Gmail");
+		  System.out.println("Logout successful");
+	  }
+	  
+	  @Test
+	  public void abcd() 
+	  {
+		  Assert.assertEquals("abcd", "abcd");
+		  System.out.println("Actual meets expected result and hence test passed");
+	  }
+	  
+	  @Test
+	  public void xyz() 
+	  {
+		  Assert.assertEquals("Yahoo", "Yahoo");
+		  System.out.println("Actual meets expected result and hence test passed");
+	  }
+	  
+	  @BeforeMethod
+	  public void login() 
+	  {
+		  Assert.assertEquals("Google", "Google");
+		  System.out.println("Successfully logged into google");
+	  }
+
+}
