@@ -1,0 +1,35 @@
+/*
+ * program executes in alphabetical order;
+ * program execution sequence: abcd, login, logout, xyz
+ */
+package TestNG;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class verifyTitle4 
+{
+	@Test
+	  public void logout() 
+	  {
+		  Assert.assertEquals("Gmail", "Gmail");
+	  }
+	  
+	  @Test
+	  public void abcd() 
+	  {
+		  Assert.assertEquals("abcd", "abcd");
+	  }
+	  
+	  @Test
+	  public void xyz() 
+	  {
+		  Assert.assertEquals("Yahoo", "Yahoo");
+	  }
+	  
+	  @Test
+	  public void login() 
+	  {
+		  Assert.assertEquals("Google", "Google");
+	  }
+}
